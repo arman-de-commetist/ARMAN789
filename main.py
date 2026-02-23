@@ -89,18 +89,18 @@
 
 
 
-class TextDataset:
-    """Хранит список строк."""
-    def __init__(self, texts):
-        if not isinstance(texts, list) or not all(isinstance(t, str) for t in texts):
-            raise TypeError("texts должен быть list[str]")
-        self.texts = texts
+# class TextDataset:
+#     """Хранит список строк."""
+#     def __init__(self, texts):
+#         if not isinstance(texts, list) or not all(isinstance(t, str) for t in texts):
+#             raise TypeError("texts должен быть list[str]")
+#         self.texts = texts
 
-    def __iter__(self):
-        return iter(self.texts)
+#     def __iter__(self):
+#         return iter(self.texts)
 
-    def __len__(self):
-        return len(self.texts)
+#     def __len__(self):
+#         return len(self.texts)
 
 
 class Preprocessor:
@@ -142,7 +142,6 @@ class Analyzer:
     ])
 
 prep = Preprocessor()
-clean = prep.transform(raw)
 
 an = Analyzer().fit(clean)
 
@@ -150,3 +149,67 @@ print("Очищенные тексты:", clean.texts)
 print("Уникальные слова:", an.unique_words)
 print("Частоты слов:", an.word_freq)
 print("Топ-3:", an.top_n(3))
+
+
+1
+
+nums = [1, 2, 3, 4, 5, 6, 8]
+
+even_sum = 0
+for n in nums:
+    if n % 2 == 0:
+        even_sum += n
+
+
+print(even_sum)
+
+
+2
+
+products = {
+    "хлеб": 120,
+    "молоко": 340,
+    "сыр": 560,
+    "масло": 1800
+}
+
+max_products = max(products, key=products.get)
+print(max_products, products[max_products])
+
+3
+
+grades = [9, 8, 7, 10, 16, 14, 12, 11]
+
+count = 0
+for g in grades:
+    if g > 10:
+        count += 1
+
+print(count)
+
+
+4
+
+student = {
+    "имя": "Арман",
+    "возраст": 18,
+    "класс": "11А",
+    "оценки": [9, 10, 11, 8]
+}
+
+print("Имя:", student["имя"])
+print("Средняя оценка:", sum(student["оценки"]) / len(student["оценки"]))
+
+5
+
+answers = []
+
+for i in range(5):
+    ans = input("Введите ответ (да/нет): ")
+    answers.append(ans)
+
+yes_count = answers.count("да")
+no_count = answers.count("нет")
+
+print("Да:", yes_count)
+print("Нет:", no_count)
