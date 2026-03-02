@@ -113,15 +113,64 @@ import json, csv
 # print("Запушено!")
     
 
-import json
-stats = {}
-with open("thirdlesson/data/visits2.json", "r", encoding='utf-8') as f:
-    for  line in f:
-         line = line.strip()
-         if  not line:
-                continue
+# import json
+# stats = {}
+# with open("thirdlesson/data/visits2.json", "r", encoding='utf-8') as f:
+#     for  line in f:
+#          line = line.strip()
+#          if  not line:
+#                 continue
          
-         parts = line.split(",")
-         name = parts[0].strip(1)
+#          parts = line.split(",")
+#          name = parts[0].strip(1)
+
+
+
+import numpy as np
+
+arr = np.array([3, 6, 9, 12, 15])
+
+print("Массив:", arr)
+print("dtype:", arr.dtype)
+print("shape:", arr.shape)
+print("ndim:", arr.ndim)
+print("size:", arr.size)
+
+
+arr2 = np.array([1, 2, 3, 4, 5])
+
+print("Сумма:", arr2)
+print("dtype:" , arr2.dtype)
+
+zeros = np.zeros((4, 3))
+ones = np.ones((4, 3))
+fives = np.full((4, 3), 5)
+
+print("Нули:\n", zeros)
+print("Единицы:\n", ones)
+print("Пятёрки:\n", fives)
+
+print("Количество элементов:", zeros.size)
+
+arr_range = np.arange(0, 20, 2)
+arr_linspace = np.linspace(0, 20 ,6)
+
+print("arange:", arr_range)
+print("linspace:", arr_linspace)
+
+np.random.seed(42)
+
+grades = np.random.randint(1, 11, 12)
+
+print("оценки:", grades)
+print("Минимум:", grades.min())
+print("Максимум:", grades.max())
+
+arr3 =np.array([10, 20, 30, 40 ,50 , 60, 70])
+print("Первый:", arr3[0])
+print("Последний:", arr3[-1])
+print("Со 2 по 5:", arr3[1:5])
+print("Каждый второй:", arr3[::2])
+print("Последние три:", arr3[-3:])
 
 
